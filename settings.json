@@ -1,4 +1,11 @@
 {
+    "Общие":{
+        "token": "vk1.a.boY8K7k2aFtc3I4KLKfFNvTIFV3bXlVxN9gmC-cfwfb7x7Q1iU6I_AwzijgDdTztPYuO_UwmQkD0l6_OszDVNp8oMjPkP3Ijagb-6pN_3w0ZrNEVE6oTKBlMXNQeyIP_KktLmjygAQTg5-TgudQk9HMXNGoa0H2ddg22xoa_yZ-R198rij4MaXcvsPIbh6Sxvu79MADs6NyJNPWKP1tpyA",
+        "reserv_token": "vk1.a._nf9C7t0KwBh6HzJM3gQkN4lgNf_qPya2oUqvbULK9E4qHYWXXrTF7kcX6AdFUXiCTdfbK3chprQLYXRgHcdLaH0Uc2uKMA8kv1pNirw3vg_Az0MLDHFX5eVD_J-eXYIMh5Ec2hxn3bGePkHomo24aug-i8xjTJIFTWImFYqD1V61ynHiv54c9qwGmkp_pUfwQTpBzbS1rfnugigjrzzRw",
+        "Ответ ошибка": "ОШИБКА!!! СБОЙ СИСТЕМЫ"
+    },
+    
+
    "Папки": {
         "Общие библиотеки": "./general_packages", 
         "Библиотеки Учебки": "./uchebka_packages",
@@ -11,8 +18,10 @@
         "Параметры": {
             "Количество дней": 5,
             "Количество резервных дней": 7,
-            "Временной интервал в минутах": 30,
-            "Разрешение на произвольный ввод": "Нет"
+            "Временной интервал в минутах": 60,
+            "Разрешение на произвольный ввод": "Нет",
+            "Начало записи": "06:00",
+            "Конец записи": "23:00"
         },
 
         "Ограничения": {
@@ -34,7 +43,10 @@
         "Параметры": {
             "Количество дней": 5,
             "Временной интервал в минутах": 30,
-            "Разрешение на произвольный ввод": "Да"
+            "Разрешение на произвольный ввод": "Да",
+            "Минимальное время записи": 20,
+            "Начало записи": "07:00",
+            "Конец записи": "23:00"
         },
 
         "Ограничения": {
