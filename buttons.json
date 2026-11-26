@@ -1,0 +1,50 @@
+{
+    "times_buttons": {
+        "Text": [],
+        "Color": "BLUE",
+        "Width": 5
+    },
+    "dates_buttons": {
+        "Text": [
+            "26 ноября 2026",
+            "27 ноября 2026",
+            "28 ноября 2026",
+            "29 ноября 2026",
+            "30 ноября 2026"
+        ],
+        "Color": "BLUE",
+        "Width": 1
+    },
+    "back_button": {
+        "Text": [
+            "Назад"
+        ],
+        "Color": "RED",
+        "Width": 1
+    },
+    "first_button": {
+        "Text": [
+            "Начать"
+        ],
+        "Color": "BLUE",
+        "Width": 1
+    },
+    "mode_select_buttons": {
+        "Text": [
+            "Запись в учебку",
+            "Запись на стирку"
+        ],
+        "Color": "WHITE",
+        "Width": 1
+    },
+    "washing_machine_select_buttons": {
+        "Text": [
+            "1-я: стиралка",
+            "2-я: сушилка",
+            "3-я: стиралка",
+            "4-я: стиралка"
+        ],
+        "Color": "BLUE",
+        "Width": 1
+    }
+}

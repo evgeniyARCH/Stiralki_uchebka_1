@@ -3,32 +3,35 @@ import json
 
 class VkKeyboardUniversal:
 
-    COLORS = {"BLUE": VkKeyboardColor.PRIMARY,
-    "WHITE": VkKeyboardColor.SECONDARY,
-    "RED": VkKeyboardColor.NEGATIVE,
-    "GREEN": VkKeyboardColor.POSITIVE,
+    COLORS = {
+        "BLUE": VkKeyboardColor.PRIMARY,
+        "WHITE": VkKeyboardColor.SECONDARY,
+        "RED": VkKeyboardColor.NEGATIVE,
+        "GREEN": VkKeyboardColor.POSITIVE,
     }
 
-    # Функция, которая возвращает пустую клавиатуру
+    # Функция, которая проверяет клавиатуру на пустоту, а так же может сразу её активировать. Если activate = True, то функция возвращает клавиатуру!!!
     @staticmethod
-    def return_empty_keyboard():
-        vk_keyboard = VkKeyboard()
-        return vk_keyboard.get_empty_keyboard()
+    def check_keyboard_for_empty(vk_keyboard, activate = False):
+        if json.loads(vk_keyboard.get_keyboard())['buttons'] == [[]]:
+            if activate: return vk_keyboard.get_empty_keyboard()
+            return True
+        else:
+            if activate: return vk_keyboard.get_keyboard()
+            return False
 
-    #Функция, которая добавляет блок кнопок определенного размера с параметрами из файла
+    #Функция, которая добавляет блок кнопок определенного размера с параметрами из файла Button_data = словарь определенного блока клавиатуры
     @staticmethod
-    def add_defined_button_block(width, height, vk_keyboard): # buttons_dict (словарь, в котором будут все данные о конкретной кнопке: текст и цвет) ???
-        # dict_keys = list(buttons_dict)
-        # print(vk_keyboard.get_empty_keyboard())
-        if json.loads(vk_keyboard.get_keyboard())['buttons'] != [[]]:
-            print(0)
+    def add_button_block(buttons_data, vk_keyboard):
+        if not VkKeyboardUniversal.check_keyboard_for_empty(vk_keyboard=vk_keyboard):
             vk_keyboard.add_line()
-        for h in range(height):
-            for w in range(width):
-                # if len(dict_keys) < (h*width+w+1):
-                #     return vk_keyboard
-                text = 'gg'
-                color = VkKeyboardUniversal.COLORS['RED']
-                vk_keyboard.add_button(text, payload={'type': 'text'}, color=color) # По факту text и color будут браться из button_dict
-            if h+1 < height: vk_keyboard.add_line()
-        return vk_keyboard
+
+        for i in range(len(buttons_data["Text"])):
+            if (i) % buttons_data["Width"] == 0 and i != 0:
+                vk_keyboard.add_line()
+            text = buttons_data["Text"][i]
+            color = VkKeyboardUniversal.COLORS[buttons_data["Color"]]
+            vk_keyboard.add_button(text, payload={'type': 'text'}, color=color)
+        return vk_keyboard  
+
+    
